@@ -1,0 +1,48 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color:#333;
+html,body{
+	height:100%;
+}
+body{
+	font: 100% $font-stack;
+    color: $primary-color;
+}
+.content{
+	height:100%;
+}
+.container{
+	display:flex;
+	flex-direction:column;
+	height:100%;
+	.main{
+		flex-grow:1;
+	}
+}
+.navbar{
+	width:100%;
+	display:flex;
+	text-align:center;
+	background:#ce3240;
+	a{
+		flex-grow:1;
+		color:#ffffff;
+		&.active{
+			color:#fbc722;
+		}
+	}
+ }
+[data-dpr='1'] .navbar{
+	height:38px;
+	font-size:14px;
+	line-height:38px;
+}
+[data-dpr='2'] .navbar{
+	height:76px;
+	font-size:28px;
+	line-height:76px;
+}
+[data-dpr='3'] .navbar{
+	height:114px;
+	font-size:42px;
+	line-height:114px;
+}

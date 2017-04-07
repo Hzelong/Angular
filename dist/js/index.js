@@ -1,0 +1,40 @@
+var routerApp = angular.module('routerApp',['ui.router']);
+routerApp.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+    $urlRouterProvider.otherwise('/index/home');
+    $stateProvider
+        .state('index',{
+            url:'/index',
+            views:{
+                '':{
+                    templateUrl:'dist/view/app.html'
+                },
+                'navbar@index':{
+                    templateUrl:'dist/view/tpl1/navbar.html'
+                }
+            }
+        })
+        .state('index.home',{
+            url:"/home",
+            views:{
+                'main@index':{
+                    templateUrl:'dist/view/tpl1/home.html'
+                }
+            }
+        })
+        .state('index.imgs',{
+            url:"/imgs",
+            views:{
+                'main@index':{
+                    templateUrl:'dist/view/tpl1/imgs.html'
+                }
+            }
+        })
+        .state('index.news',{
+            url:"/news",
+            views:{
+                'main@index':{
+                    templateUrl:'dist/view/tpl1/news.html'
+                }
+            }
+        })
+}]);
